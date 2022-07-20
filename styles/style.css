@@ -48,10 +48,44 @@ body{
     margin-left: 106px;
     color: white;
 }
+
 .header-picture img{
     margin-top:40px;
     height: 600px;
+    
 }
+
+/* animation design  */
+
+.design{
+    position:relative;
+    font-size: 50px;
+    color: black;
+    -webkit-text-stroke: 0.3vw green;
+    text-transform: uppercase;
+}
+.design::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: red;
+    -webkit-text-stroke: 0vw blue;
+    border-right:2px solid red;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate {
+0%,10%,100%{
+    width: 0;
+}        
+70%,90%{
+    width: 100%;
+}        
+}
+/* animation design  */
       
   
 
@@ -131,6 +165,7 @@ body{
     padding:8px 20px;
     background-color: #888888;
     border-radius: 5px;
+    color: white;
 }
 /* players style end */
 /* hidden button start */
@@ -184,6 +219,9 @@ padding: 0 20px;
 @media screen and (max-width:420px) {
     body{
 
+    }
+    .design{
+        display: none;
     }
     .header{
         background-color: black;
